@@ -1,0 +1,37 @@
+Arguments: 
+  /home/gustavomanca/.nvm/versions/node/v12.16.1/bin/node /usr/share/yarn/bin/yarn.js add express bcryptjs jsonwebtoken config express-validator mongoose
+
+PATH: 
+  /home/gustavomanca/.nvm/versions/node/v12.16.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/gustavomanca/Documents/Guga/projects/contact-keeper/package.json: Unexpected token ] in JSON at position 51
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "contact-keeper",
+    "version": "1.0.0",],
+    "description": "Contact manager app",
+    "main": "server.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
