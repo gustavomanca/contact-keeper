@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "yarn start --prefix client",
+    "clientinstall": "yarn add --prefix client",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "license": "MIT",
   "dependencies": {
