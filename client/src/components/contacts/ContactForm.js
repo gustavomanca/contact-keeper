@@ -35,7 +35,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (current === null) {
-      addContact(current);
+      addContact(contact);
     } else {
       updateContact(contact);
     }
