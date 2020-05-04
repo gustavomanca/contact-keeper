@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
 
@@ -7,7 +7,15 @@ const Register = () => {
   const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
-  const { register } = authContext;
+  const { register, error, clearErrors } = authContext;
+
+  useEffect(() => {
+    if (error === "User already exists") {
+      setAlert(error, "danger");
+
+      clearErrors();
+    }
+  }, [error]);
 
   const [user, setUser] = useState({
     name: "",
@@ -33,62 +41,61 @@ const Register = () => {
         email,
         password,
       });
-      a;
     }
   };
 
   return (
-    <div className="form-container">
+    <div className='form-container'>
       <h1>
-        Account <span className="text-primary">Register</span>
+        Account <span className='text-primary'>Register</span>
       </h1>
       <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
+        <div className='form-group'>
+          <label htmlFor='name'>Name</label>
           <input
-            type="text"
-            name="name"
+            type='text'
+            name='name'
             value={name}
             onChange={onChange}
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="email">E-mail</label>
+        <div className='form-group'>
+          <label htmlFor='email'>E-mail</label>
           <input
-            type="email"
-            name="email"
+            type='email'
+            name='email'
             value={email}
             onChange={onChange}
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
+        <div className='form-group'>
+          <label htmlFor='password'>Password</label>
           <input
-            type="password"
-            name="password"
+            type='password'
+            name='password'
             value={password}
             onChange={onChange}
-            minLength="6"
+            minLength='6'
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password2">Confirm Password</label>
+        <div className='form-group'>
+          <label htmlFor='password2'>Confirm Password</label>
           <input
-            type="password"
-            name="password2"
+            type='password'
+            name='password2'
             value={password2}
             onChange={onChange}
-            minLength="6"
+            minLength='6'
             required
           />
         </div>
         <input
-          type="submit"
-          value="Register"
-          className="btn btn-primary btn-block"
+          type='submit'
+          value='Register'
+          className='btn btn-primary btn-block'
         />
       </form>
     </div>

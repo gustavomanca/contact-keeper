@@ -12,6 +12,7 @@ import {
   CLEAR_FILTER,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  CLEAR_ERRORS,
 } from "../types";
 
 const AuthState = (props) => {
@@ -58,7 +59,7 @@ const AuthState = (props) => {
   const logout = () => console.log("logout");
 
   // Clear Errors
-  const clearErrors = () => console.log("clearErrors");
+  const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
   return (
     <AuthContext.Provider
